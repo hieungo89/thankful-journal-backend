@@ -67,7 +67,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(REAL_BASE_DIR, 'my-thankful-journal', 'build', 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,9 +130,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# STATICFILES_DIRS = [
-#   os.path.join(REAL_BASE_DIR, 'myJournalBackend', 'build', 'static')
-# ]
+STATICFILES_DIRS = [
+  os.path.join(REAL_BASE_DIR, 'my-thankful-journal', 'build', 'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
