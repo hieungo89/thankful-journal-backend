@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-8$ecxvskc0a2#u0)or)15c!807r$o9mk*w@&qwos@i1gyq%#h6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     #my_apps
     'core',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +54,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+   "http://thankful-journal.s3-website-us-west-2.amazonaws.com",
 ]
 
 ROOT_URLCONF = 'backend.urls'
